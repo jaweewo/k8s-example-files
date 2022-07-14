@@ -1,2 +1,16 @@
 - Actividad 1
     - Crea un pod con la imagen nginx:1.17
+    - Crea un servicio llamado nginx que se vincule con el pod
+    - Crea otro pod llamado nginx-shell, con la misma imagen nginx, y comprueba que puedes acceder al servicio del nginx levantado previamente (Usando CURL)
+    - Elimina los recursos creados en la actividad.
+- Actividad 2 
+    - Crea un pod con la imagen nginx:1.17 montando el directorio /usr/share/nginx/html/ del contenedor en una ruta local (Persistent Volume), donde tengas un fichero index.html
+    - Crea un servicio tipo "NodePort", anexalo al Nginx y comprueba que puedes acceder.
+    - Comprueba que el index.html ha cambiado
+    - Elimina el Persistent volume, PVC y pod.
+    - Realiza la misma tarea mediante un configmap.
+- Actividad 3
+    - Crea un Deployment con 3 replicas de Nginx con la imagen nginx:1.17, indicale un LivenessProbe en el puerto del servicio.
+    - Modifica el Deployment anterior a 5 replicas.
+    - Comprueba que se ha modificado y elimina los elementos creados.
+

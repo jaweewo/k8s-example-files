@@ -4,6 +4,19 @@
 
 kubectl run nginx --image=nginx 
 
+# Shell dentro de un pod
+
+kubectl exec --stdin --tty my-pod -- /bin/bash
+
+
+### Eliminar elementos
+
+kubectl delete pod my-pod
+
+kubectl delete svc my-service
+
+kubectl delete pvc my-pvc
+
 ### Comandos de salida simple
 
 kubectl get services                          # Lista todos los servicios del Namespace actual
