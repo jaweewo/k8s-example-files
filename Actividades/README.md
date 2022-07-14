@@ -1,0 +1,2 @@
+- Actividad 1
+    - Crea un pod con la imagen nginx:1.17

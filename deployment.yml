@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: miapp
+  labels:
+    app: miapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: miapp
+  template:
+    metadata:
+      labels:
+        app: miapp
+    spec:
+      containers:
+      - name: miapp
+        image: nginx:1.7.9
+        resources:
+          requests:
+            memory: "250Mi"
+            cpu: "30m"
+          limits:
+            memory: "700Mi"
+            cpu: "100m"
+        ports:
+        - containerPort: 80
