@@ -4,9 +4,9 @@ metadata:
   name: kuma
 spec:
   selector:
-    app: kuma
+    app: nginx
   ports:
-  - name: kuma
-    port: 3001
-    targetPort: kuma
+  - name: nginx
+    port: 80
+    targetPort: 80
     protocol: TCP
