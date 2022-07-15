@@ -1,0 +1,31 @@
+
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  annotations:
+  generation: 2
+  labels:
+    objectset.rio.cattle.io/hash: 755bcf5f58a1b8ec2e7c04ff65ad33bd3a5e9316
+  managedFields:
+  - apiVersion: traefik.containo.us/v1alpha1
+    manager: agent
+    operation: Update
+  name: argocd-server
+  namespace: argocd
+spec:
+  entryPoints:
+  - websecure
+  routes:
+  - kind: Rule
+    match: Host(`argocd.dominio`)
+    priority: 10
+    services:
+    - name: argocd-server
+      port: 80
+  - kind: Rule
+    match: Host(`argocd.dominio`) && Headers(`Content-Type`, `application/grpc`)
+    priority: 11
+    services:
+    - name: argocd-server
+      port: 80
+      scheme: h2c
