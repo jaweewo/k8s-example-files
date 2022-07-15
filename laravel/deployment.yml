@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment # what to create?
+metadata:
+  name: laravel-mariadb-deployment
+spec: # specification for deployment resource
+  replicas: 2 # how many replicas of pods we want to create
+  selector:
+    matchLabels:
+      app: laravel-mariadb
+  template: # blueprint for pods
+    metadata:
+      labels:
+        app: laravel-mariadb # service will look for this label
+    spec: # specification for pods
+      containers: # we can have one or more containers
+      - name: laravel
+        image: heymowski/laravel
+        ports:
+        - containerPort: 80
