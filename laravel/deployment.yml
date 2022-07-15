@@ -16,4 +16,4 @@ spec: # specification for deployment resource
       - name: laravel
         image: heymowski/laravel
         ports:
-        - containerPort: 80
+        - containerPort: 81
